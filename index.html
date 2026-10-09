@@ -18,7 +18,19 @@
     font-weight: normal;
     font-style: normal;
   }
+@font-face {
+  font-family: 'BobbyJonesSoft';
+  src: url('./images/Bobby-Jones-Soft.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'Handwriting';
+  src: url('./images/Handwriting.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
   html {
     box-sizing: border-box;
   }
@@ -59,8 +71,8 @@
 	  /* ===== NAME POSITION ON LETTER ===== */
 #nameMessage {
   position: absolute;
-  top: 34.2%;
-  left: 45.5%;
+  top: 34.6%;
+  left: 44.8%;
   width: 34%;
 
   transform: translate(-50%, -50%);
@@ -70,22 +82,23 @@
 
   text-align: center;
 
-  font-family: 'Aesthet', serif;
-  font-size: 32px;
+  font-family: 'Handwriting', serif;
+  font-size: 30px;
   line-height: 1;
-  color: #2b221c;
+  color: #7b1e2b;
 
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  pointer-events: none;
 }
 	/* ===== MESSAGE GROUP POSITION ===== */
 /* ===== REVEAL MESSAGE GROUP IN SCRATCH AREA ===== */
 #messageGroup {
   position: absolute;
-  top: 57.8%;
+  top: 57.1%;
   left: 50%;
-  width: 58%;
+  width: 60%;
 
   transform: translate(-50%, -50%);
   transform-origin: center center;
@@ -97,9 +110,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 6px;
 
   text-align: center;
+  pointer-events: none;
 }
 
 /* ===== MAIN REVEAL MESSAGE ===== */
@@ -107,23 +121,23 @@
   width: 100%;
   margin: 0;
 
-  font-family: 'Aesthet', serif;
-  font-size: 30px;
+  font-family: 'BobbyJonesSoft', serif;
+  font-size: 24px;
   line-height: 1.05;
-  color: #2b221c;
+  color: #3a2a24;
 
   overflow-wrap: break-word;
 }
 
 /* ===== SECONDARY REVEAL MESSAGE ===== */
 #secondaryMessage {
-  width: 92%;
+  width: 100%;
   margin: 0;
 
-  font-family: 'Aesthet', serif;
-  font-size: 20px;
-  line-height: 1.05;
-  color: #2b221c;
+  font-family: 'BobbyJonesSoft', serif;
+  font-size: 34px;
+  line-height: 1.02;
+  color: #3a2a24;
 
   overflow-wrap: break-word;
 }
