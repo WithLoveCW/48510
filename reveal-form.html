@@ -186,6 +186,20 @@
       </p>
 
       <form id="revealForm">
+		  <label for="recipientName">Recipient's Name</label>
+
+<input
+  type="text"
+  id="recipientName"
+  name="recipientName"
+  placeholder="e.g. Olivia"
+  maxlength="35"
+  required
+/>
+
+<div class="hint">
+  Enter the name you'd like to appear after "Dear" on Santa's letter.
+</div>
         
 <label for="mainMessage">Main Message</label>
 
@@ -348,25 +362,31 @@
 
       editingRevealId = data.id;
 
-    document.getElementById("mainMessage").value =
+    document.getElementById("recipientName").value =
+  data.name || "";
+
+document.getElementById("mainMessage").value =
   data.main_message || "";
 
 document.getElementById("secondaryMessage").value =
   data.secondary_message || "";
-		
     }
 
     form.addEventListener("submit", async function(event) {
       event.preventDefault();
 
-      const mainMessage =
+     const recipientName =
+  document.getElementById("recipientName").value.trim();
+
+const mainMessage =
   document.getElementById("mainMessage").value.trim();
 
 const secondaryMessage =
   document.getElementById("secondaryMessage").value.trim();
 		
       if (editToken && editingRevealId) {
-    const updateData = {
+  const updateData = {
+  name: recipientName,
   main_message: mainMessage,
   secondary_message: secondaryMessage
 };
@@ -431,6 +451,7 @@ const secondaryMessage =
 .insert([
   {
     id: id,
+    name: recipientName,
     main_message: mainMessage,
     secondary_message: secondaryMessage,
     edit_token: newEditToken,
