@@ -56,18 +56,37 @@
   display: block;
   z-index: 0;
 }
+	  /* ===== NAME POSITION ON LETTER ===== */
+#nameMessage {
+  position: absolute;
+  top: 34.2%;
+  left: 45.5%;
+  width: 34%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 3;
+  visibility: visible;
+
+  text-align: center;
+
+  font-family: 'Aesthet', serif;
+  font-size: 32px;
+  line-height: 1;
+  color: #2b221c;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 	/* ===== MESSAGE GROUP POSITION ===== */
+/* ===== REVEAL MESSAGE GROUP IN SCRATCH AREA ===== */
 #messageGroup {
   position: absolute;
-
-  /* POSITION INSIDE THE TICKET */
-  top: 71%;
+  top: 57.8%;
   left: 50%;
+  width: 58%;
 
-  /* WIDTH OF TEXT AREA */
-  width: 68%;
-
-  /* CENTRED - NO ROTATION */
   transform: translate(-50%, -50%);
   transform-origin: center center;
 
@@ -78,51 +97,35 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
 
   text-align: center;
 }
 
-/* ===== MAIN MESSAGE ===== */
+/* ===== MAIN REVEAL MESSAGE ===== */
 #mainMessage {
-	 position: relative;
-  top: 8px;
   width: 100%;
   margin: 0;
 
   font-family: 'Aesthet', serif;
-  font-size: 29px;
-  line-height: 1.1;
-
-  color: #212121;
-
-  overflow-wrap: break-word;
-}
-
-/* ===== SECONDARY MESSAGE ===== */
-#secondaryMessage {
-  width: 100%;
-  margin: 0;
-
-  font-family: 'Aesthet', serif;
-  font-size: 18px;
-  line-height: 1.15;
-
-  color: #212121;
-
-  overflow-wrap: break-word;
-}
-	  #secondaryMessage {
-  /* CHANGE SECONDARY MESSAGE WIDTH HERE */
-  width: 85%;
-
-  margin: 0;
-
-  font-family: 'Aesthet', serif;
-  font-size: 19px;
+  font-size: 30px;
   line-height: 1.05;
+  color: #2b221c;
 
- color: #212121;
+  overflow-wrap: break-word;
+}
+
+/* ===== SECONDARY REVEAL MESSAGE ===== */
+#secondaryMessage {
+  width: 92%;
+  margin: 0;
+
+  font-family: 'Aesthet', serif;
+  font-size: 20px;
+  line-height: 1.05;
+  color: #2b221c;
+
+  overflow-wrap: break-word;
 }
 
    .sc__container canvas {
@@ -146,7 +149,9 @@
    <div id="js--sc--container" class="sc__container">
   <img id="backgroundImage" src="./images/back.png" alt="Background Image" />
 
- <div id="messageGroup">
+<div id="nameMessage"></div>
+
+<div id="messageGroup">
   <div id="mainMessage"></div>
   <div id="secondaryMessage"></div>
 </div>
@@ -187,7 +192,9 @@ const BG_MUSIC_VOLUME = 0.5;
     console.error("Details load error:", error);
     return;
   }
-
+document.getElementById("nameMessage").textContent =
+  data.name || "";
+		  
   document.getElementById("mainMessage").textContent =
   data.main_message || "";
 
