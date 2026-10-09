@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personalise Your Reveal</title>
+  <h1 id="pageTitle">Personalise Your Santa Letter</h1>
 
   <style>
     @font-face {
@@ -181,9 +181,9 @@
     <div class="form-card">
       <h1 id="pageTitle">Personalise Your Reveal</h1>
 
-      <p class="intro" id="introText">
-        Enter the text you'd like to appear on your scratch reveal!
-      </p>
+     <p class="intro" id="introText">
+  Enter the name and two messages you'd like to appear on your personalised Santa letter.
+</p>
 
       <form id="revealForm">
 		  <label for="recipientName">Recipient's Name</label>
@@ -201,42 +201,52 @@
   Enter the name you'd like to appear after "Dear" on Santa's letter.
 </div>
         
-<label for="mainMessage">Main Message</label>
+<label for="mainMessage">Top Message (Smaller Text)</label>
 
 <textarea
   id="mainMessage"
   name="mainMessage"
-  placeholder="DisneyWorld"
+  placeholder="e.g. YOU ARE ON"
   required
 ></textarea>
 
 <div class="hint">
-  Enter the destination
-</div>
-
-<div class="hint">
-  Recommended word length = 1 word
+  First line of your surprise message. Recommended: up to 4 words.
 </div>
 		  
-		  <label for="secondaryMessage">Secondary Message</label>
+		<label for="secondaryMessage">Main Reveal Message (Larger Text)</label>
 
 <textarea
   id="secondaryMessage"
   name="secondaryMessage"
-  placeholder="We leave 23rd December"
+  placeholder="e.g. THE NICE LIST!"
   required
 ></textarea>
 
 <div class="hint">
-  Enter the second message you'd like to appear in the reveal.
-</div>
-
-		  <div class="hint">
-  Recommended word length = 4 words max 
+  Main surprise wording, displayed in larger text. For the best fit, keep your wording short (ideally 1–3 words), as shown in the examples below.
 </div>
 
 
-
+<div class="hint" style="margin-top: 24px; line-height: 1.8;">
+  <strong>Need some inspiration? Here are a few examples:</strong>
+  <p>
+    <strong>Example 1 – Santa's Nice List</strong><br>
+    Top Message: YOU ARE ON<br>
+    Main Reveal Message: THE NICE LIST!
+  </p>
+  <p>
+    <strong>Example 2 – Christmas Countdown</strong><br>
+    Top Message: I'LL BE VISITING<br>
+    Main Reveal Message: IN 2 SLEEPS!
+  </p>
+  <p>
+    <strong>Example 3 – Holiday Surprise</strong><br>
+    Top Message: YOU'RE GOING TO<br>
+    Main Reveal Message: DISNEY WORLD!
+  </p>
+</div>
+		  
         <button type="submit" id="submitButton">
           Create My Reveal
         </button>
